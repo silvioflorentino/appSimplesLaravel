@@ -8,7 +8,8 @@ use App\Models\Contato;
 
 class ContatoController extends Controller
 {
-   public function index(){
+   
+    public function index(){
         return view('index');
     }
 
@@ -41,7 +42,7 @@ class ContatoController extends Controller
 
     public function destroy(Contato $id){
         dd($id);
-        $id->delete();
+        //$id->delete();
         //return Redirect::route('todos-contato');
     }
 
@@ -59,7 +60,6 @@ class ContatoController extends Controller
     }
 
     public function show(Contato $id){
-
         return view('buscarTodos',['contatos'=>$id]);
     }
 }

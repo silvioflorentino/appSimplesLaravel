@@ -14,6 +14,7 @@
          <button type="submit" class="btn btn-primary">Buscar</button>
     </div>
 </div>
+</form>
 <!--fim formulario -->
 
 <!--inicio tabela-->
@@ -24,8 +25,8 @@
       <th scope="col">Código</th>
       <th scope="col">Nome</th>
       <th scope="col">Fone</th>
-      <th scope="col">Deletar</th>
       <th scope="col">Alterar</th>
+      <th scope="col">Deletar</th>
     </tr>
   </thead>
   <tbody>

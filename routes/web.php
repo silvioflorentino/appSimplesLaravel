@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContatoController;
-
+//get mostrar
 Route::get('/',[ContatoController::class,'index'])->name('index');
 Route::get('/cadastrar',[ContatoController::class,'showFormContato'])->name('formulario-contato');
+//post enviar dados
 Route::post('/cadastrar',[ContatoController::class,'storeContato'])->name('cadastrar-contato');
 
 Route::get('/todoscontato',[ContatoController::class,'showGerenciador'])->name('todos-contato');
