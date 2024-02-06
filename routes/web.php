@@ -1,27 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContatoController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/',[ContatoController::class,'index'])->name('index');
+Route::get('/cadastrar',[ContatoController::class,'showFormContato'])->name('formulario-contato');
+Route::post('/cadastrar',[ContatoController::class,'storeContato'])->name('cadastrar-contato');
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/todoscontato',[ContatoController::class,'showGerenciador'])->name('todos-contato');
 
-Route::get('/buscar',function(){
-    return view('buscarTodos');
-});
+Route::delete('/delete-contato/{id}',[ContatoController::class,'destroy'])->name('delete-contato');
 
-Route::get('/cad',function(){
-    return view('cadastrar');
-});
+Route::put('/todoscontato/{id}',[ContatoController::class,'update'])->name('alterar-contato');
+
+
+
+
+
 

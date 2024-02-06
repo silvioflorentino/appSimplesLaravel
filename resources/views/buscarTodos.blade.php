@@ -2,12 +2,13 @@
 @section('content')
 <!-- inicio formulario -->
 <div class="container m-4">
+<form method="get" action="{{route('todos-contato')}}">
 <div class="row g-3 align-items-center">
     <div class="col-auto">
         <label for="inputcodigo" class="col-form-label">Digite o Nome</label>
     </div>
     <div class="col-auto">
-        <input type="text" id="inputcodigo" class="form-control" aria-describedby="passwordHelpInline">
+        <input type="text" id="inputcodigo" name="nomeContato" class="form-control" aria-describedby="passwordHelpInline">
     </div>
     <div class="col-auto">
          <button type="submit" class="btn btn-primary">Buscar</button>
@@ -28,15 +29,27 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>x</td>
-      <td>>><<</td>
-    </tr>
-    
-  </tbody>
+      @foreach($contatos as $contatosArray)
+      <tr>
+        <th scope="row">{{$contatosArray->id}}</th>
+        <td>{{$contatosArray->nomeContato}}</td>
+        <td>{{$contatosArray->foneContato}}</td>
+        <td>
+          <a href="{{route('delete-contato',$contatosArray->id)}}">
+            <button type="button" class="btn btn-primary">X</button>
+          </a>
+        </td>
+        
+        <td>
+          <form method="POST" Action="{{route('delete-contato',$contatosArray->id)}}">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">X </button>
+          </form>
+        </td>
+      </tr>
+      @endforeach
+    </tbody>
 </table>
 <!--fim tabela-->
 

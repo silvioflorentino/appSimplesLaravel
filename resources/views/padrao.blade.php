@@ -24,10 +24,10 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cad">Cadastro</a>
+          <a class="nav-link" href="/cadastrar">Cadastro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/buscar">Buscar</a>
+          <a class="nav-link" href="/todoscontato">Buscar</a>
         </li>
       </ul>
     </div>
