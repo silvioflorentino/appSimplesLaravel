@@ -41,9 +41,8 @@ class ContatoController extends Controller
     }
 
     public function destroy(Contato $id){
-        dd($id);
-        //$id->delete();
-        //return Redirect::route('todos-contato');
+        $id->delete();
+        return Redirect::route('todos-contato');
     }
 
 
@@ -60,6 +59,6 @@ class ContatoController extends Controller
     }
 
     public function show(Contato $id){
-        return view('buscarTodos',['contatos'=>$id]);
+        return view('alterar',['contatos'=>$id]);
     }
 }

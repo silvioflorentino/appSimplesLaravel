@@ -12,7 +12,9 @@ Route::get('/todoscontato',[ContatoController::class,'showGerenciador'])->name('
 
 Route::delete('/delete-contato/{id}',[ContatoController::class,'destroy'])->name('delete-contato');
 
-Route::put('/todoscontato/{id}',[ContatoController::class,'update'])->name('alterar-contato');
+//partes do alterar
+Route::get('/alterar/{id}',[ContatoController::class,'show'])->name('alterar-contato');
+Route::put('/alterarBanco/{id}',[ContatoController::class,'update'])->name('alterarBanco-contato');
 
 
 
